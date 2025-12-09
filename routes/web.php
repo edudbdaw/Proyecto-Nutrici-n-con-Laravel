@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-//modificamos esta linea para que me lleve al dashboard
+//modificamos esta linea para que me lleve al
 Route::redirect('/', 'dashboard');
 
 Route::get('/dashboard', function () {
