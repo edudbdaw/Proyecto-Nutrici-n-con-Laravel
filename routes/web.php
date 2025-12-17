@@ -2,12 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use StaticKidz\BedcaAPI\BedcaClient;
 
 //modificamos esta linea para que me lleve al
 Route::redirect('/', 'dashboard');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+
+    $client = new BedcaClient();
+    $rawDatas = $client->getFoodGroups();
+
+    return view('dashboard' , ['datas' => $rawDatas]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
