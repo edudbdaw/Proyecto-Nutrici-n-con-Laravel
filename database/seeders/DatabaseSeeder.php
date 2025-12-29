@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,      // Crea tu usuario
-            CategorySeeder::class,  // <--- ¡AÑADE ESTO! Descarga las categorías
+            CategorySeeder::class,  // <--- Descarga las categorías
         ]);
     }
 
