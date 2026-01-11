@@ -15,10 +15,14 @@ return new class extends Migration
             $table->id(); // 1. ID interno de Laravel
 
             // 2. Relaciones
-            // Categoría obligatoria (Todo producto debe tener categoría)
+            // Categoría obligatoria (Todo producto debe tener categoría) 
+            //debido a constrained que verifica su veracidad
+            //Es decir , añadimos una columna categorias de la que buscamos que exista el id de la categoria 
+            //en la tabla categorias , si no existe no la crea , si existe si , al igual , si borramos una categoria
+            //se borra el producto con dicho category_id
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
 
-            // Usuario es NULLABLE (La clave de tu proyecto)
+            // Usuario es NULLABLE 
             // - Si es NULL: Es un producto público de la API (lo ve todo el mundo)
             // - Si tiene ID: Es un producto privado de ese usuario
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
