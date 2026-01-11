@@ -28,7 +28,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
 
             // 3. ID externo de la API
-            // Nullable porque los productos que cree Edu a mano no tendrán ID de Bedca
+            // Nullable porque los productos que cree el usuario a mano no tendrán ID de Bedca
             $table->integer('bedca_id')->nullable();
 
             // 4. Datos del producto
@@ -49,7 +49,7 @@ return new class extends Migration
             $table->decimal('fats_mono', 8, 2)->default(0);     // Monoinsaturadas
             $table->decimal('fats_poly', 8, 2)->default(0);     // Poliinsaturadas
 
-            $table->timestamps(); // Created_at y Updated_at
+            $table->timestamps(); 
         });
     }
 

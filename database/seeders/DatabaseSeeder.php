@@ -23,8 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            UserSeeder::class,      // Crea tu usuario
-            CategorySeeder::class,  // <--- Descarga las categorías
+            UserSeeder::class,      // Crea usuario admin
+            CategorySeeder::class,  // Descarga las categorías
+            ProductSeeder::class,
         ]);
     }
 
