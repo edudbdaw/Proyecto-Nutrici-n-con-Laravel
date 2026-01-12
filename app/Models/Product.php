@@ -15,4 +15,16 @@ class Product extends Model
         'calories', 'proteins', 'carbohydrates', 'fats', 
         'fiber', 'cholesterol', 'fats_sat', 'fats_mono', 'fats_poly'
     ];
+
+    // Relación: Un producto "PERTENECE A" una Categoría
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Relación: Un producto "PERTENECE A" un Usuario (opcionalmente)
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
