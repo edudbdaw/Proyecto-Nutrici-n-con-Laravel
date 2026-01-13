@@ -21,8 +21,7 @@ class Dish extends Model
         return $this->belongsToMany(Product::class)->withPivot('amount');
     }
     
-    // CALCULAR CALORÍAS TOTALES DEL PLATO (Lógica extra)
-    // Esto te dará puntos extra: una función que se calcula sola
+    // CALCULAR CALORÍAS TOTALES DEL PLATO
     public function getTotalCaloriesAttribute()
     {
         // Recorremos los productos y sumamos: (CaloriasProducto * Gramos / 100)
@@ -31,3 +30,4 @@ class Dish extends Model
         });
     }
 }
+

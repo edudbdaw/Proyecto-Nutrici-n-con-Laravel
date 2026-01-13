@@ -103,9 +103,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        // 1. SEGURIDAD OTRA VEZ 👮‍♂️
+
         // Aunque ocultemos el botón, un hacker puede enviar la petición por Postman.
-        // Verificamos de nuevo que el producto sea mío.
+        // Verificamos de nuevo que el producto sea del usuairo logueado.
         if ($product->user_id !== Auth::id()) {
             abort(403, 'No toques lo que no es tuyo.');
         }
@@ -118,10 +118,10 @@ class ProductController extends Controller
             'proteins'      => 'nullable|numeric|min:0',
             'carbohydrates' => 'nullable|numeric|min:0',
             'fats'          => 'nullable|numeric|min:0',
-            // ... resto de campos
+            
         ]);
 
-        // 3. ACTUALIZAR 🔄
+        // 3. ACTUALIZAR
         // El método update() coge el array y cambia solo los campos que vienen.
         $product->update($validated);
 
@@ -135,7 +135,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        // 1. SEGURIDAD: Solo borras lo tuyo
+        // 1. SEGURIDAD: Solo borras lo del usuario logueado
         if ($product->user_id !== Auth::id()) {
             abort(403, 'No puedes borrar productos de otros.');
         }
