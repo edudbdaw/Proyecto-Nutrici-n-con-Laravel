@@ -16,5 +16,10 @@ Route::get('/status' , function (){
    ]) ;
 });
 
-Route::apiResource('Product' , ApiProductController::class);
+Route::group(['middleware' => 'auth:sanctum'], function() {
+    //Rutas protegidas por autentificacion
+    Route::apiResource('Product' , ApiProductController::class);
+
+});
+
 Route::post('/login', [UserController::class , 'index']);
