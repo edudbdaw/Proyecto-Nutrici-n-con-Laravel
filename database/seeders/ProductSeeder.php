@@ -38,10 +38,10 @@ class ProductSeeder extends Seeder
                 continue;
             }
 
-            // ⚠️ TRUCO DE DESARROLLADOR: 
+           
             // Como descargar 500 productos tarda mucho, cortamos el array.
             // "Dame solo desde el 0 hasta el 7". Así probamos rápido.
-            $productsSlice = array_slice($productsList->food, 0, 7);
+            $productsSlice = array_slice($productsList->food, 0, 20);
 
             // 5. BUCLE MENOR: Vamos producto a producto (Manzana, Pera...)
             foreach ($productsSlice as $apiProduct) {
@@ -99,14 +99,9 @@ class ProductSeeder extends Seeder
         }
     }
 
+    
     /**
-     * 🧠 FUNCIÓN AYUDANTE (HELPER)
-     * ¿Por qué existe? Para no repetir el mismo bucle foreach 10 veces arriba.
-     * Recibe: El array gigante de nutrientes y el ID que buscamos (ej: 416).
-     * Devuelve: El valor (ej: 10.5) o 0 si no lo encuentra.
-     */
-    /**
-     * Versión 2.0 (Blindada contra objetos raros)
+     * Versión 2.0 (Blindada contra objetos raros) y no repetir foreach 
      */
     private function extractValue(array $nutrientList, int $targetId): float
     {

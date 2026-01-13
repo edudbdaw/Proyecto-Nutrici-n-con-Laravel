@@ -21,7 +21,7 @@
                 {{-- TARJETA 1: ALIMENTOS --}}
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-md transition-shadow">
                     <div class="p-6 border-b border-gray-200">
-                        <div class="text-3xl mb-2">🍎</div>
+                        <div class="text-3xl mb-2"></div>
                         <h3 class="font-bold text-lg mb-2">Base de Alimentos</h3>
                         <p class="text-gray-600 text-sm mb-4">
                             Consulta la base de datos de alimentos, ve sus calorías o añade tus propios ingredientes personalizados.
@@ -35,7 +35,7 @@
                 {{-- TARJETA 2: PLATOS --}}
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-md transition-shadow">
                     <div class="p-6 border-b border-gray-200">
-                        <div class="text-3xl mb-2">🍲</div>
+                        <div class="text-3xl mb-2"></div>
                         <h3 class="font-bold text-lg mb-2">Cocina (Mis Platos)</h3>
                         <p class="text-gray-600 text-sm mb-4">
                             Crea recetas combinando ingredientes. El sistema calculará las calorías totales por ti.
@@ -49,7 +49,7 @@
                 {{-- TARJETA 3: CALENDARIO --}}
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg hover:shadow-md transition-shadow">
                     <div class="p-6 border-b border-gray-200">
-                        <div class="text-3xl mb-2">📅</div>
+                        <div class="text-3xl mb-2"></div>
                         <h3 class="font-bold text-lg mb-2">Mi Calendario</h3>
                         <p class="text-gray-600 text-sm mb-4">
                             Planifica tus comidas diarias y visualiza el resumen nutricional total de cada día.
