@@ -27,4 +27,9 @@ class Product extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function dishes()
+    {
+        return $this->belongsToMany(Dish::class)->withPivot('amount');
+    }
 }

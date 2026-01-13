@@ -12,9 +12,26 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('Inicio') }}
+                        </x-nav-link>
+
+                        {{-- NUEVO: Alimentos --}}
+                        <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.*')">
+                            {{ __('Alimentos') }}
+                        </x-nav-link>
+
+                        {{-- NUEVO: Platos --}}
+                        <x-nav-link :href="route('dishes.index')" :active="request()->routeIs('dishes.*')">
+                            {{ __('Mis Platos') }}
+                        </x-nav-link>
+
+                        {{-- NUEVO: Calendario --}}
+                        <x-nav-link :href="route('menus.index')" :active="request()->routeIs('menus.*')">
+                            {{ __('Calendario') }}
+                        </x-nav-link>
+                    </div>
                 </div>
             </div>
 
@@ -96,5 +113,6 @@
                 </form>
             </div>
         </div>
+        
     </div>
 </nav>
