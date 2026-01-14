@@ -20,5 +20,14 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
+
+
+        DB::table(table: 'users')->insert([
+            'name' => 'user1',
+            'email' => 'user1@example.es',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password')
+        ]);
+
     }
 }

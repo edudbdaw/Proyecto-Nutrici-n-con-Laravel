@@ -14,10 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // LÓGICA DE NEGOCIO (REQUISITO DEL PROYECTO):
-        // "Debemos ver los productos preestablecidos (públicos) Y los propios del usuario."
 
-        // Traducimos esto a Eloquent:
+        // "Debemos ver los productos preestablecidos (públicos) Y los propios del usuario."
         // "Dame los productos donde 'user_id' sea NULL (Públicos) 
         //  O donde 'user_id' sea el ID del usuario conectado (user logged)."
 
